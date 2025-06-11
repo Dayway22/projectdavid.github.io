@@ -2,20 +2,24 @@
 <html>
 <head>
   <title>David's Portfolio</title>
+  <base href="https://david123.github.io/my-portfolio/"> <!-- Change this! -->
 </head>
 <body>
-  <h1>Hello everyone!</h1>
-  <p>First website</p>
-  
   <div id="background-container"></div>
-
   <script>
-    fetch('background-folder/backgroundgrid.html')  // Updated path!
-      .then(response => response.text())
+    fetch('background-folder/backgroundgrid.html')
+      .then(response => {
+        if (!response.ok) throw new Error("File not found");
+        return response.text();
+      })
       .then(html => {
         document.getElementById('background-container').innerHTML = html;
       })
-      .catch(error => console.error("Error loading background:", error));
+      .catch(err => {
+        console.error("Error:", err);
+        document.getElementById('background-container').innerHTML = 
+          "<p>Background failed to load. Check console.</p>";
+      });
   </script>
 </body>
 </html>
