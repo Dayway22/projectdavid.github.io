@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-<title>>
-David's Portfilo 
-</title>
-//
-<Head>
-  Hello everyone!
-</Head>
- <p> first website</p>
+<head>
+  <title>David's Portfolio</title>
+</head>
+<body>
+  <h1>Hello everyone!</h1>
+  <p>First website</p>
   
+  <div id="background-container"></div>
+
+  <script>
+    fetch('background-folder/backgroundgrid.html')  // Updated path!
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('background-container').innerHTML = html;
+      })
+      .catch(error => console.error("Error loading background:", error));
+  </script>
+</body>
 </html>
-//
-<div id="background-container"></div>
-<script>
-  fetch('backgroundgrid.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('background-container').innerHTML = html;
-    });
-</script>
