@@ -11,3 +11,11 @@ David's Portfilo
   
 </html>
 //
+<div id="background-container"></div>
+<script>
+  fetch('backgroundgrid.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('background-container').innerHTML = html;
+    });
+</script>
