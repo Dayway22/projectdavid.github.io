@@ -3,7 +3,7 @@
 <title>>
 David's Portfilo 
 </title>
-
+//
 <Head>
   Hello everyone!
 </Head>
@@ -11,15 +11,3 @@ David's Portfilo
   
 </html>
 //
-<!-- Inside your main index.html -->
-<body>
-  <div id="background-container"></div>
-  
-  <script>
-    fetch('backgroundgrid.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('background-container').innerHTML = html;
-      });
-  </script>
-</body>
